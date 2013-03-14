@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div>
+    <form action="" method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-primary" name= "search">Search</button>
+    <button class="btn" name= "clear">Clear</button>
+    </form>
+</div>
+<div class="span9">
+    <ul>
+    {% for rest in results %}
+        <li>{{ rest.Name }}</li>
+            <ul>
+                <li>Address: {{ rest.Address }}</li>
+                {% if rest.Rating %}
+                <li>Rating: {{ rest.Rating }}</li>
+                {% endif %}
+                {% if rest.Violations %}
+                    <ul>
+                    {% for v in rest.Violations %}
+                        <li class="text-error">Violations Description: {{ v }}</li>
+                    {% endfor %}
+                    </ul>
+                {% else %}
+                <li class="text-success">No violations found.</li>
+                {% endif %}
+            </ul>
+
+
+    {% endfor %}
+    </ul>
+
+</div>
+{% endblock %}

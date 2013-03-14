@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Safe2Eat</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+</head>
+<body class="well">
+    <div class="container">
+        <h3 class="span12">Safe2Eat</h3>
+        <div class="span3">
+        {% block body %}
+        {% endblock %}
+        </div>
+        <div class="span6">
+            <p class="text-info">
+                Please enter your address and eat at your own risk.
+                Search will yield 20 results.
+           </p>
+           <br>
+           <p class="text-error">
+                Just because there is no violation reported here, does
+                not mean there were no violations, just that the search
+                engine did not find them based on the addresses provided.
+           </p>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>
